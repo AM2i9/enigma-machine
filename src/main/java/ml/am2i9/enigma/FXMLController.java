@@ -1,6 +1,5 @@
 package ml.am2i9.enigma;
 
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -10,7 +9,9 @@ import javafx.scene.layout.GridPane;
 public class FXMLController {
 
     @FXML private GridPane keyboard;
-    @FXML private ListView rotor1;
+    @FXML private ListView<String> rotorl;
+    @FXML private ListView<String> rotorm;
+    @FXML private ListView<String> rotorr;
 
     private Machine machine;
 
@@ -37,5 +38,9 @@ public class FXMLController {
                 keyboard.add(btn, c, r);
             }
         }
+
+        rotorl.setItems(machine.left.alphabet);
+        rotorm.setItems(machine.mid.alphabet);
+        rotorr.setItems(machine.right.alphabet);
     }
 }

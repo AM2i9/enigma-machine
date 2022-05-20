@@ -1,5 +1,8 @@
 package ml.am2i9.enigma;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 /**
  * Enigma I
  * Rotor # | ABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -10,20 +13,23 @@ package ml.am2i9.enigma;
  */
 public class Rotor {
     
-    private String alphabet;
+    public ObservableList<String> alphabet;
     private static String alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     public Rotor (String alphabet) {
-        this.alphabet = alphabet;
+        this.alphabet = FXCollections.observableArrayList();
+        for (char ch: alphabet.toCharArray()) {
+            this.alphabet.add(String.valueOf(ch));
+        }
     }
 
     public boolean isAt(String letter) {
-        return alphabet.substring(0, 1).equals(letter);
+        return alphabet.get(0).equals(letter);
     }
 
     public String pass(String letter) {
         int i = alpha.indexOf(letter);
-        String c = alphabet.substring(i, i+1);
+        String c = alphabet.get(i);
         return c;
     }
 
@@ -34,6 +40,7 @@ public class Rotor {
     }
 
     public void advance() {
-        alphabet = alphabet.substring(1) + alphabet.substring(0, 1);
+        alphabet.add(alphabet.get(0));
+        alphabet.remove(0);
     }
 }

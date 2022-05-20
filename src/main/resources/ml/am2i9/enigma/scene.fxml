@@ -5,7 +5,11 @@
 
 <VBox fx:controller="ml.am2i9.enigma.FXMLController" xmlns:fx="http://javafx.com/fxml">
    <children>
-      <ListView fx:id="rotor1" xmlns:fx="http://javafx.com/fxml"></ListView>
+      <HBox xmlns:fx="http://javafx.com/fxml">
+         <ListView fx:id="rotorl" xmlns:fx="http://javafx.com/fxml"></ListView>
+         <ListView fx:id="rotorm" xmlns:fx="http://javafx.com/fxml"></ListView>
+         <ListView fx:id="rotorr" xmlns:fx="http://javafx.com/fxml"></ListView>
+      </HBox>
       <GridPane fx:id="keyboard" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
       </GridPane>
    </children>
