@@ -22,9 +22,7 @@ public class MainApp extends Application {
     }
 
     public static void main(String[] args) {
-        // launch(args);
-        Machine machine = new Machine();
-        machine.run();
+        launch(args);
     }
 
 }
