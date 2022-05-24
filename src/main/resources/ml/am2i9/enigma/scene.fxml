@@ -6,9 +6,20 @@
 <VBox fx:controller="ml.am2i9.enigma.FXMLController" xmlns:fx="http://javafx.com/fxml">
    <children>
       <HBox xmlns:fx="http://javafx.com/fxml">
-         <ListView fx:id="rotorl" xmlns:fx="http://javafx.com/fxml"></ListView>
-         <ListView fx:id="rotorm" xmlns:fx="http://javafx.com/fxml"></ListView>
-         <ListView fx:id="rotorr" xmlns:fx="http://javafx.com/fxml"></ListView>
+         <children>
+            <VBox xmlns:fx="http://javafx.com/fxml">
+               <Button fx:id="rotorlrotate" onAction="#rotateRotorLeft">🠕</Button>
+               <ListView fx:id="rotorl" xmlns:fx="http://javafx.com/fxml"></ListView>
+            </VBox>
+            <VBox xmlns:fx="http://javafx.com/fxml">
+               <Button fx:id="rotormrotate" onAction="#rotateRotorMid">🠕</Button>
+               <ListView fx:id="rotorm" xmlns:fx="http://javafx.com/fxml"></ListView>
+            </VBox>
+            <VBox xmlns:fx="http://javafx.com/fxml">
+               <Button fx:id="rotorrrotate" onAction="#rotateRotorRight">🠕</Button>
+               <ListView fx:id="rotorr" xmlns:fx="http://javafx.com/fxml"></ListView>
+            </VBox>
+         </children>
       </HBox>
       <GridPane fx:id="keyboard" xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
       </GridPane>

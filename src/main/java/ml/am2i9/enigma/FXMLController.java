@@ -15,10 +15,29 @@ public class FXMLController {
 
     private Machine machine;
 
+    @FXML
+    private void rotateRotorLeft(ActionEvent event) {
+        event.consume();
+        machine.left.advance();
+    }
+
+    @FXML
+    private void rotateRotorMid(ActionEvent event) {
+        event.consume();
+        machine.mid.advance();
+    }
+
+    @FXML
+    private void rotateRotorRight(ActionEvent event) {
+        event.consume();
+        machine.right.advance();
+    }
+
     protected void handleKeyboardButtonPress(ActionEvent event) {
         Button btn = (Button) event.getSource();
         String key = btn.getText();
         System.out.println(machine.passLetter(key));
+        event.consume();
     }
 
     public void initialize() {
