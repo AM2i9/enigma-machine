@@ -4,22 +4,17 @@ import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.control.TextInputDialog;
-import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.scene.text.Text;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 
 public class FXMLController {
 
-    @FXML private GridPane keyboard;
+    @FXML private VBox keyboard;
     @FXML private ListView<String> rotorl;
     @FXML private ListView<String> rotorm;
     @FXML private ListView<String> rotorr;
@@ -115,11 +110,14 @@ public class FXMLController {
         };
 
         for (int r = 0; r < keys.length; r++){
+            HBox row = new HBox();
             for(int c = 0; c < keys[r].length(); c++){
                 Button btn = new Button(keys[r].substring(c, c + 1));
                 btn.setOnAction(this::handleKeyboardButtonPress);
-                keyboard.add(btn, c, r);
+                row.getChildren().add(btn);
             }
+            row.setAlignment(Pos.CENTER);
+            keyboard.getChildren().add(row);
         }
 
         rotorl.setItems(machine.left.alphabet);
