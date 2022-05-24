@@ -18,7 +18,15 @@ public class Plug {
         }
     }
 
-    public boolean equals(String l) {
+    public boolean connectsWith(String l) {
         return l.equals(this.a) || l.equals(this.b);
+    }
+
+    public boolean equals(Plug other) {
+        return other.a.equals(this.a) && other.b.equals(this.b);
+    }
+
+    public String toString() {
+        return this.a + " \u2B0C " + this.b;
     }
 }

@@ -1,15 +1,18 @@
 package ml.am2i9.enigma;
 
-import java.util.ArrayList;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 public class Plugboard {
-    private ArrayList<Plug> plugs = new ArrayList<Plug>();
+    public ObservableList<Plug> plugs;
 
-    public Plugboard(){}
+    public Plugboard(){
+        this.plugs = FXCollections.observableArrayList();
+    }
 
     public String passLetter(String letter) {
         for (Plug plug : plugs) {
-            if (plug.equals(letter)) {
+            if (plug.connectsWith(letter)) {
                 return plug.getOpposite(letter);
             }
         }
@@ -22,5 +25,9 @@ public class Plugboard {
 
     public void addPlug(Plug p) {
         plugs.add(p);
+    }
+
+    public void removePlug(int i) {
+        plugs.remove(i);
     }
 }

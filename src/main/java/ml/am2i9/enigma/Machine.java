@@ -13,7 +13,7 @@ public class Machine {
         right = new Rotor("BDFHJLCPRTXVZNYEIWGAKMUSQO");
         plugboard = new Plugboard();
 
-        // plugboard.addPlug("S", "D");
+        plugboard.addPlug("S", "D");
     }
 
     public String passLetter(String letter) {

@@ -8,16 +8,33 @@
       <HBox xmlns:fx="http://javafx.com/fxml">
          <children>
             <VBox xmlns:fx="http://javafx.com/fxml">
-               <Button fx:id="rotorlrotate" onAction="#rotateRotorLeft">🠕</Button>
+               <HBox xmlns:fx="http://javafx.com/fxml">
+                  <Button fx:id="rotorlrotate" onAction="#rotateRotorLeft">🠕</Button>
+                  <Label xmlns:fx="http://javafx.com/fxml">Left Rotor (1)</Label>
+               </HBox>
                <ListView fx:id="rotorl" xmlns:fx="http://javafx.com/fxml"></ListView>
             </VBox>
             <VBox xmlns:fx="http://javafx.com/fxml">
-               <Button fx:id="rotormrotate" onAction="#rotateRotorMid">🠕</Button>
+               <HBox xmlns:fx="http://javafx.com/fxml">
+                  <Button fx:id="rotormrotate" onAction="#rotateRotorMid">🠕</Button>
+                  <Label xmlns:fx="http://javafx.com/fxml">Middle Rotor (2)</Label>
+               </HBox>
                <ListView fx:id="rotorm" xmlns:fx="http://javafx.com/fxml"></ListView>
             </VBox>
             <VBox xmlns:fx="http://javafx.com/fxml">
-               <Button fx:id="rotorrrotate" onAction="#rotateRotorRight">🠕</Button>
+               <HBox xmlns:fx="http://javafx.com/fxml">
+                  <Button fx:id="rotorrrotate" onAction="#rotateRotorRight">🠕</Button>
+                  <Label xmlns:fx="http://javafx.com/fxml">Right Rotor (3)</Label>
+               </HBox>
                <ListView fx:id="rotorr" xmlns:fx="http://javafx.com/fxml"></ListView>
+            </VBox>
+            <VBox xmlns:fx="http://javafx.com/fxml">
+               <HBox xmlns:fx="http://javafx.com/fxml">
+                  <Button fx:id="addPlugButton" onAction="#addPlug">+</Button>
+                  <Button fx:id="removePlugButton" onAction="#removePlug">-</Button>
+                  <Label xmlns:fx="http://javafx.com/fxml">Plugboard</Label>
+               </HBox>
+               <ListView fx:id="plugboardlist" xmlns:fx="http://javafx.com/fxml"></ListView>
             </VBox>
          </children>
       </HBox>
