@@ -1,3 +1,7 @@
 .label {
     -fx-text-fill: black;
 }
+
+#container {
+    -fx-background-color: lightgrey;
+}

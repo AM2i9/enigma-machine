@@ -13,11 +13,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.MultipleSelectionModel;
 import javafx.scene.control.TextInputDialog;
 import javafx.scene.layout.HBox;
-import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Circle;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -30,6 +28,7 @@ public class FXMLController {
     @FXML private ListView<String> rotorl;
     @FXML private ListView<String> rotorm;
     @FXML private ListView<String> rotorr;
+    @FXML private HBox rotors;
 
     @FXML private ListView<Plug> plugboardlist;
 
@@ -190,11 +189,15 @@ public class FXMLController {
         lightboard.setPadding(new Insets(5));
 
         rotorl.setItems(machine.left.alphabet);
+        rotorl.setMaxWidth(150);
         rotorm.setItems(machine.mid.alphabet);
+        rotorm.setMaxWidth(150);
         rotorr.setItems(machine.right.alphabet);
+        rotorr.setMaxWidth(150);
 
         plugboardlist.setItems(machine.plugboard.plugs);
+        plugboardlist.setMaxWidth(150);
 
-        
+        rotors.setAlignment(Pos.CENTER);
     }
 }

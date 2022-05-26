@@ -3,9 +3,9 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:controller="ml.am2i9.enigma.FXMLController" xmlns:fx="http://javafx.com/fxml">
+<VBox fx:id="container" fx:controller="ml.am2i9.enigma.FXMLController" xmlns:fx="http://javafx.com/fxml">
    <children>
-      <HBox xmlns:fx="http://javafx.com/fxml">
+      <HBox fx:id="rotors" xmlns:fx="http://javafx.com/fxml">
          <children>
             <VBox xmlns:fx="http://javafx.com/fxml">
                <HBox xmlns:fx="http://javafx.com/fxml">
