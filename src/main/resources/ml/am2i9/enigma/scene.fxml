@@ -40,5 +40,6 @@
       </HBox>
       <VBox fx:id="lightboard" xmlns:fx="http://javafx.com/fxml" alignment="center"></VBox>
       <VBox fx:id="keyboard" xmlns:fx="http://javafx.com/fxml" alignment="center"></VBox>
+      <StackPane fx:id="kknlsdfl" xmlns:fx="http://javafx.com/fxml"></StackPane>
    </children>
 </VBox>

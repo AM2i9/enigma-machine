@@ -31,7 +31,6 @@ public class Machine {
                 left.advance();
             }
         }
-        HnzoitAnvoid.nnzoixnd(plugged);
         return plugged;
     }
 }
