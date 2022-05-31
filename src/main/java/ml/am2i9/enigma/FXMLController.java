@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.util.Base64;
 import java.util.HashMap;
+import java.util.Optional;
 
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
@@ -71,34 +72,39 @@ public class FXMLController {
         String a = "";
 
         while (a.length() < 1 || a.length() > 1) {
-            dialog.showAndWait();
-            a = dialog.getEditor().getText();
+            Optional<String> result = dialog.showAndWait();
 
-            if (a.length() < 1 || a.length() > 1) {
+            if (!result.isPresent()) {
+                return;
+            }
+
+            if (result.get().length() < 1 || result.get().length() > 1) {
                 dialog.setHeaderText("Please enter a single letter");
+            } else {
+                a = result.get().toUpperCase();
             }
         }
 
-        a = a.toUpperCase();
         dialog.getEditor().setText("");
-
         dialog.setHeaderText("Enter the second letter to connect the plug to");
 
         String b = "";
 
         while (b.length() < 1 || b.length() > 1) {
-            dialog.showAndWait();
-            b = dialog.getEditor().getText();
+            Optional<String> result = dialog.showAndWait();
 
-            if (b.length() < 1 || b.length() > 1) {
+            if (!result.isPresent()) {
+                return;
+            }
+
+            if (result.get().length() < 1 || result.get().length() > 1) {
                 dialog.setHeaderText("Please enter a single letter");
+            } else {
+                b = result.get().toUpperCase();
             }
         }
 
-        b = b.toUpperCase();
-
         machine.plugboard.addPlug(a, b);
-        
     }
 
     @FXML
