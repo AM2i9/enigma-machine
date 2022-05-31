@@ -24,6 +24,14 @@
     -fx-text-fill: white;
 }
 
+.list-cell:even:selected {
+    -fx-background-color: rgb(209, 97, 41);
+}
+
+.list-cell:odd:selected {
+    -fx-background-color: rgb(209, 97, 41);
+}
+
 .list-cell:even {
     -fx-background-color: rgb(48, 48, 48);
 }
