@@ -1,7 +1,50 @@
 .label {
-    -fx-text-fill: black;
+    -fx-text-fill: white;
+    -fx-font-size: 14;
+}
+
+.button {
+    -fx-text-fill: white;
+    -fx-background-color: rgb(43, 35, 26);
+}
+
+.button:pressed {
+    -fx-text-fill: rgb(176, 176, 176);
+}
+
+.button:hover {
+    -fx-background-color:rgb(93, 77, 58);
+}
+
+.list-view {
+    -fx-background-color: rgb(21, 21, 21);
+}
+
+.list-cell {
+    -fx-text-fill: white;
+}
+
+.list-cell:even {
+    -fx-background-color: rgb(48, 48, 48);
+}
+
+.list-cell:odd {
+    -fx-background-color: rgb(33, 33, 33);
+}
+
+.scroll-bar {
+    -fx-background-color: rgb(43, 28, 17);
+    -fx-color: rgb(94, 74, 39);
+}
+
+.thumb:hover, .increment-button:hover, .decrement-button:hover {
+    -fx-color: rgb(137, 108, 58);
+}
+
+.thumb:pressed, .increment-button:pressed, .decrement-button:pressed {
+    -fx-color: rgb(101, 80, 43);
 }
 
 #container {
-    -fx-background-color: lightgrey;
+    -fx-background-color: rgb(68, 54, 39);
 }
