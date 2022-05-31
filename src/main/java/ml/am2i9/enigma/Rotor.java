@@ -43,4 +43,10 @@ public class Rotor {
         alphabet.add(alphabet.get(0));
         alphabet.remove(0);
     }
+
+    public void advanceBack() {
+        int len = alphabet.size();
+        alphabet.add(0, alphabet.get(len - 1));
+        alphabet.remove(len);
+    }
 }

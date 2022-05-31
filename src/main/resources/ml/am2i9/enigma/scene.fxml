@@ -9,14 +9,16 @@
          <children>
             <VBox xmlns:fx="http://javafx.com/fxml">
                <HBox xmlns:fx="http://javafx.com/fxml">
-                  <Button fx:id="rotorlrotate" onAction="#rotateRotorLeft">🠕</Button>
+                  <Button fx:id="rotorlrotate" onAction="#rotateRotorLeft">↑</Button>
+                  <Button fx:id="rotorlrotate" onAction="#rotateRotorLeftBack">↓</Button>
                   <Label xmlns:fx="http://javafx.com/fxml">Left Rotor (1)</Label>
                </HBox>
                <ListView fx:id="rotorl" xmlns:fx="http://javafx.com/fxml"></ListView>
             </VBox>
             <VBox xmlns:fx="http://javafx.com/fxml">
                <HBox xmlns:fx="http://javafx.com/fxml">
-                  <Button fx:id="rotormrotate" onAction="#rotateRotorMid">🠕</Button>
+                  <Button fx:id="rotormrotate" onAction="#rotateRotorMid">↑</Button>
+                  <Button fx:id="rotormrotate" onAction="#rotateRotorMidBack">↓</Button>
                   <Label xmlns:fx="http://javafx.com/fxml">Middle Rotor (2)</Label>
                </HBox>
                <ListView fx:id="rotorm" xmlns:fx="http://javafx.com/fxml"></ListView>
@@ -24,6 +26,7 @@
             <VBox xmlns:fx="http://javafx.com/fxml">
                <HBox xmlns:fx="http://javafx.com/fxml">
                   <Button fx:id="rotorrrotate" onAction="#rotateRotorRight">🠕</Button>
+                  <Button fx:id="rotorrrotate" onAction="#rotateRotorRightBack">↓</Button>
                   <Label xmlns:fx="http://javafx.com/fxml">Right Rotor (3)</Label>
                </HBox>
                <ListView fx:id="rotorr" xmlns:fx="http://javafx.com/fxml"></ListView>

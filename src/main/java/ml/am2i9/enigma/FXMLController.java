@@ -62,6 +62,24 @@ public class FXMLController {
     }
 
     @FXML
+    private void rotateRotorLeftBack(ActionEvent event) {
+        event.consume();
+        machine.left.advanceBack();
+    }
+
+    @FXML
+    private void rotateRotorMidBack(ActionEvent event) {
+        event.consume();
+        machine.mid.advanceBack();
+    }
+
+    @FXML
+    private void rotateRotorRightBack(ActionEvent event) {
+        event.consume();
+        machine.right.advanceBack();
+    }
+
+    @FXML
     private void addPlug(ActionEvent event) throws IOException{
         event.consume();
         TextInputDialog dialog = new TextInputDialog();
