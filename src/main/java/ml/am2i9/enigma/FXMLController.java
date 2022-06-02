@@ -223,14 +223,14 @@ public class FXMLController {
         lightboard.setPadding(new Insets(5));
 
         rotorl.setItems(machine.left.alphabet);
-        rotorl.setMaxWidth(150);
+        rotorl.setMaxWidth(180);
         rotorm.setItems(machine.mid.alphabet);
-        rotorm.setMaxWidth(150);
+        rotorm.setMaxWidth(180);
         rotorr.setItems(machine.right.alphabet);
-        rotorr.setMaxWidth(150);
+        rotorr.setMaxWidth(180);
 
         plugboardlist.setItems(machine.plugboard.plugs);
-        plugboardlist.setMaxWidth(150);
+        plugboardlist.setMaxWidth(180);
 
         rotors.setAlignment(Pos.CENTER);
 

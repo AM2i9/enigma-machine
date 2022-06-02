@@ -2,13 +2,15 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
 
 <VBox fx:id="container" fx:controller="ml.am2i9.enigma.FXMLController" xmlns:fx="http://javafx.com/fxml">
    <children>
       <HBox fx:id="rotors" xmlns:fx="http://javafx.com/fxml">
          <children>
             <VBox xmlns:fx="http://javafx.com/fxml">
-               <HBox xmlns:fx="http://javafx.com/fxml">
+               <HBox xmlns:fx="http://javafx.com/fxml" spacing="5">
+                  <padding><Insets top="5" right="0" bottom="5" left="5"/></padding>
                   <Button fx:id="rotorlrotate" onAction="#rotateRotorLeft">↑</Button>
                   <Button fx:id="rotorlrotate" onAction="#rotateRotorLeftBack">↓</Button>
                   <Label xmlns:fx="http://javafx.com/fxml">Left Rotor (1)</Label>
@@ -16,7 +18,8 @@
                <ListView fx:id="rotorl" xmlns:fx="http://javafx.com/fxml"></ListView>
             </VBox>
             <VBox xmlns:fx="http://javafx.com/fxml">
-               <HBox xmlns:fx="http://javafx.com/fxml">
+               <HBox xmlns:fx="http://javafx.com/fxml" spacing="5">
+                  <padding><Insets top="5" right="0" bottom="5" left="5"/></padding>
                   <Button fx:id="rotormrotate" onAction="#rotateRotorMid">↑</Button>
                   <Button fx:id="rotormrotate" onAction="#rotateRotorMidBack">↓</Button>
                   <Label xmlns:fx="http://javafx.com/fxml">Middle Rotor (2)</Label>
@@ -24,7 +27,8 @@
                <ListView fx:id="rotorm" xmlns:fx="http://javafx.com/fxml"></ListView>
             </VBox>
             <VBox xmlns:fx="http://javafx.com/fxml">
-               <HBox xmlns:fx="http://javafx.com/fxml">
+               <HBox xmlns:fx="http://javafx.com/fxml" spacing="5">
+                  <padding><Insets top="5" right="0" bottom="5" left="5"/></padding>
                   <Button fx:id="rotorrrotate" onAction="#rotateRotorRight">🠕</Button>
                   <Button fx:id="rotorrrotate" onAction="#rotateRotorRightBack">↓</Button>
                   <Label xmlns:fx="http://javafx.com/fxml">Right Rotor (3)</Label>
@@ -32,7 +36,8 @@
                <ListView fx:id="rotorr" xmlns:fx="http://javafx.com/fxml"></ListView>
             </VBox>
             <VBox xmlns:fx="http://javafx.com/fxml">
-               <HBox xmlns:fx="http://javafx.com/fxml">
+               <HBox xmlns:fx="http://javafx.com/fxml" spacing="5">
+                  <padding><Insets top="5" right="0" bottom="5" left="5"/></padding>
                   <Button fx:id="addPlugButton" onAction="#addPlug">+</Button>
                   <Button fx:id="removePlugButton" onAction="#removePlug">-</Button>
                   <Label xmlns:fx="http://javafx.com/fxml">Plugboard</Label>
