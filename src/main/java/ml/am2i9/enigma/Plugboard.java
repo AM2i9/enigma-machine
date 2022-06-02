@@ -30,4 +30,13 @@ public class Plugboard {
     public void removePlug(int i) {
         plugs.remove(i);
     }
+
+    public boolean isPlugged(String l) {
+        for (Plug plug: plugs) {
+            if (plug.connectsWith(l)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

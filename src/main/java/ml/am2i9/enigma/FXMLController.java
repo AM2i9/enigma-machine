@@ -79,6 +79,27 @@ public class FXMLController {
         machine.right.advanceBack();
     }
 
+    private String plugDialog(TextInputDialog dialog) {
+        String res = "";
+
+        while (res.length() != 1) {
+            Optional<String> result = dialog.showAndWait();
+
+            if (!result.isPresent()) {
+                return null;
+            }
+
+            if (result.get().length() < 1 || result.get().length() > 1) {
+                dialog.setHeaderText("Please enter a single letter");
+            } else if (machine.plugboard.isPlugged(result.get())) {
+                dialog.setHeaderText("'" + result.get().toUpperCase() + "' is already plugged. Please choose another letter.");
+            } else {
+                res = result.get().toUpperCase();
+            }
+        }
+        return res;
+    }
+
     @FXML
     private void addPlug(ActionEvent event) throws IOException{
         event.consume();
@@ -87,40 +108,21 @@ public class FXMLController {
         dialog.setGraphic(null);
         dialog.setHeaderText("Enter the first letter to connect the plug to");
 
-        String a = "";
+        String a = plugDialog(dialog);
 
-        while (a.length() < 1 || a.length() > 1) {
-            Optional<String> result = dialog.showAndWait();
-
-            if (!result.isPresent()) {
-                return;
-            }
-
-            if (result.get().length() < 1 || result.get().length() > 1) {
-                dialog.setHeaderText("Please enter a single letter");
-            } else {
-                a = result.get().toUpperCase();
-            }
-        }
+        if (a == null) return;
 
         dialog.getEditor().setText("");
         dialog.setHeaderText("Enter the second letter to connect the plug to");
 
-        String b = "";
+        String b = plugDialog(dialog);
 
-        while (b.length() < 1 || b.length() > 1) {
-            Optional<String> result = dialog.showAndWait();
-
-            if (!result.isPresent()) {
-                return;
-            }
-
-            if (result.get().length() < 1 || result.get().length() > 1) {
-                dialog.setHeaderText("Please enter a single letter");
-            } else {
-                b = result.get().toUpperCase();
-            }
+        while (a.equals(b)) {
+            dialog.setHeaderText("Cannot plug a letter into itself. Please choose another letter.");
+            b = plugDialog(dialog);
         }
+
+        if (b == null) return;
 
         machine.plugboard.addPlug(a, b);
     }
