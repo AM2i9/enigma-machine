@@ -6,6 +6,7 @@ import java.util.Base64;
 import java.util.HashMap;
 import java.util.Optional;
 
+import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -42,6 +43,11 @@ public class FXMLController {
     private HashMap<String, StackPane> lightMap;
 
     private Machine machine;
+
+    @FXML
+    private void closeWindow(ActionEvent event) {
+        Platform.exit();
+    }
 
     @FXML
     private void rotateRotorLeft(ActionEvent event) {
