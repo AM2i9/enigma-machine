@@ -29,7 +29,7 @@
             <VBox xmlns:fx="http://javafx.com/fxml">
                <HBox xmlns:fx="http://javafx.com/fxml" spacing="5">
                   <padding><Insets top="5" right="0" bottom="5" left="5"/></padding>
-                  <Button fx:id="rotorrrotate" onAction="#rotateRotorRight">🠕</Button>
+                  <Button fx:id="rotorrrotate" onAction="#rotateRotorRight">↑</Button>
                   <Button fx:id="rotorrrotate" onAction="#rotateRotorRightBack">↓</Button>
                   <Label xmlns:fx="http://javafx.com/fxml">Right Rotor (3)</Label>
                </HBox>

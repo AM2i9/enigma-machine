@@ -27,6 +27,8 @@ import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
 
 public class FXMLController {
+
+    @FXML private VBox container;
     
     @FXML private StackPane kknlsdfl;
 
@@ -40,6 +42,7 @@ public class FXMLController {
     @FXML private ListView<Plug> plugboardlist;
 
     private HashMap<String, StackPane> lightMap;
+    private HashMap<String, Button> buttonMap;
 
     private Machine machine;
 
@@ -140,10 +143,14 @@ public class FXMLController {
     protected void handleKeyboardButtonPress(ActionEvent event) {
         Button btn = (Button) event.getSource();
         String key = btn.getText();
+        triggerButton(key);
+        event.consume();
+    }
+
+    private void triggerButton(String key) {
         String encoded = machine.passLetter(key);
         nnzoixnd(encoded);
         turnOnLight(encoded);
-        event.consume();
     }
 
     private void turnOnLight(String letter) {
@@ -155,7 +162,7 @@ public class FXMLController {
             Task<Void> sleeper = new Task<Void>() {
                 @Override
                 protected Void call() throws Exception {
-                    try {Thread.sleep(1000);}
+                    try {Thread.sleep(500);}
                     catch (InterruptedException e) {}
                     return null;
                 }
@@ -173,6 +180,7 @@ public class FXMLController {
         machine = new Machine();
 
         lightMap = new HashMap<String, StackPane>();
+        buttonMap = new HashMap<String, Button>();
 
         String[] keys = {
             "QWERTYUIOP",
@@ -192,6 +200,8 @@ public class FXMLController {
                 btn.setFont(font);
 
                 row.getChildren().add(btn);
+
+                buttonMap.put(keys[r].substring(c, c + 1), btn);
 
                 StackPane light = new StackPane();
                 light.setPrefSize(30, 30);
@@ -218,6 +228,30 @@ public class FXMLController {
         }
         keyboard.setSpacing(5);
         keyboard.setPadding(new Insets(5));
+
+        // Actual computer keyboard
+        container.setOnKeyPressed(event -> {
+            String key = event.getText().toUpperCase();
+            for(String row : keys) {
+                if (row.indexOf(key) != -1 && !key.isBlank()) {
+                    triggerButton(key);
+                    buttonMap.get(key).setStyle("-fx-background-color:rgb(93, 77, 58);");
+                    Task<Void> sleeper = new Task<Void>() {
+                        @Override
+                        protected Void call() throws Exception {
+                            try {Thread.sleep(500);}
+                            catch (InterruptedException e) {}
+                            return null;
+                        }
+                    };
+                    sleeper.setOnSucceeded(e -> {
+                        buttonMap.get(key).setStyle("-fx-background-color: rgb(43, 35, 26);");
+                    });
+                    new Thread(sleeper).start();
+                }
+            }
+            event.consume();
+        });
 
         lightboard.setSpacing(5);
         lightboard.setPadding(new Insets(5));
