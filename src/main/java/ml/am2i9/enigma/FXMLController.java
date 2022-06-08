@@ -107,6 +107,7 @@ public class FXMLController {
     private void addPlug(ActionEvent event) throws IOException{
         event.consume();
         TextInputDialog dialog = new TextInputDialog();
+        dialog.getDialogPane().getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
         dialog.setTitle("Add Plug");
         dialog.setGraphic(null);
         dialog.setHeaderText("Enter the first letter to connect the plug to");

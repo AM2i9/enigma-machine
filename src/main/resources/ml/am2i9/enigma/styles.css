@@ -53,6 +53,6 @@
     -fx-color: rgb(101, 80, 43);
 }
 
-#container {
+#container, .dialog-pane, .dialog-pane:header *.header-panel{
     -fx-background-color: rgb(68, 54, 39);
 }
