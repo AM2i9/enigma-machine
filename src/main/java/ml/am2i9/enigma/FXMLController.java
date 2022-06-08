@@ -94,7 +94,7 @@ public class FXMLController {
 
             if (result.get().length() < 1 || result.get().length() > 1) {
                 dialog.setHeaderText("Please enter a single letter");
-            } else if (machine.plugboard.isPlugged(result.get())) {
+            } else if (machine.plugboard.isPlugged(result.get().toUpperCase())) {
                 dialog.setHeaderText("'" + result.get().toUpperCase() + "' is already plugged. Please choose another letter.");
             } else {
                 res = result.get().toUpperCase();
