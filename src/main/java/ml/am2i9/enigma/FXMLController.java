@@ -49,37 +49,37 @@ public class FXMLController {
     @FXML
     private void rotateRotorLeft(ActionEvent event) {
         event.consume();
-        machine.left.advance();
+        machine.getLeftRotor().advance();
     }
 
     @FXML
     private void rotateRotorMid(ActionEvent event) {
         event.consume();
-        machine.mid.advance();
+        machine.getMiddleRotor().advance();
     }
 
     @FXML
     private void rotateRotorRight(ActionEvent event) {
         event.consume();
-        machine.right.advance();
+        machine.getRightRotor().advance();
     }
 
     @FXML
     private void rotateRotorLeftBack(ActionEvent event) {
         event.consume();
-        machine.left.advanceBack();
+        machine.getLeftRotor().advanceBack();
     }
 
     @FXML
     private void rotateRotorMidBack(ActionEvent event) {
         event.consume();
-        machine.mid.advanceBack();
+        machine.getMiddleRotor().advanceBack();
     }
 
     @FXML
     private void rotateRotorRightBack(ActionEvent event) {
         event.consume();
-        machine.right.advanceBack();
+        machine.getRightRotor().advanceBack();
     }
 
     private String plugDialog(TextInputDialog dialog) {
@@ -94,7 +94,7 @@ public class FXMLController {
 
             if (result.get().length() < 1 || result.get().length() > 1) {
                 dialog.setHeaderText("Please enter a single letter");
-            } else if (machine.plugboard.isPlugged(result.get().toUpperCase())) {
+            } else if (machine.getPlugboard().isPlugged(result.get().toUpperCase())) {
                 dialog.setHeaderText("'" + result.get().toUpperCase() + "' is already plugged. Please choose another letter.");
             } else {
                 res = result.get().toUpperCase();
@@ -128,7 +128,7 @@ public class FXMLController {
 
         if (b == null) return;
 
-        machine.plugboard.addPlug(a, b);
+        machine.getPlugboard().addPlug(a, b);
     }
 
     @FXML
@@ -137,7 +137,7 @@ public class FXMLController {
 
         MultipleSelectionModel<Plug> select = plugboardlist.getSelectionModel();
         if (select.getSelectedIndex() >= 0) {
-            machine.plugboard.removePlug(select.getSelectedIndex());
+            machine.getPlugboard().removePlug(select.getSelectedIndex());
         }
     }
 
@@ -257,14 +257,14 @@ public class FXMLController {
         lightboard.setSpacing(5);
         lightboard.setPadding(new Insets(5));
 
-        rotorl.setItems(machine.left.alphabet);
+        rotorl.setItems(machine.getLeftRotor().alphabet);
         rotorl.setMaxWidth(180);
-        rotorm.setItems(machine.mid.alphabet);
+        rotorm.setItems(machine.getMiddleRotor().alphabet);
         rotorm.setMaxWidth(180);
-        rotorr.setItems(machine.right.alphabet);
+        rotorr.setItems(machine.getRightRotor().alphabet);
         rotorr.setMaxWidth(180);
 
-        plugboardlist.setItems(machine.plugboard.plugs);
+        plugboardlist.setItems(machine.getPlugboard().getPlugs());
         plugboardlist.setMaxWidth(180);
 
         rotors.setAlignment(Pos.CENTER);

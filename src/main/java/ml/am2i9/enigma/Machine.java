@@ -2,10 +2,10 @@ package ml.am2i9.enigma;
 
 public class Machine {
     // yeah might be bad
-    public Rotor left;
-    public Rotor mid;
-    public Rotor right;
-    public Plugboard plugboard;
+    private Rotor left;
+    private Rotor mid;
+    private Rotor right;
+    private Plugboard plugboard;
 
     public Machine() {
         left = new Rotor("EKMFLGDQVZNTOWYHXUSPAIBRCJ");
@@ -32,5 +32,21 @@ public class Machine {
             }
         }
         return plugged;
+    }
+
+    public Rotor getLeftRotor() {
+        return left;
+    }
+
+    public Rotor getMiddleRotor() {
+        return mid;
+    }
+
+    public Rotor getRightRotor() {
+        return right;
+    }
+
+    public Plugboard getPlugboard() {
+        return plugboard;
     }
 }

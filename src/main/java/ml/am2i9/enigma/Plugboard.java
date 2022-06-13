@@ -4,7 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class Plugboard {
-    public ObservableList<Plug> plugs;
+    private ObservableList<Plug> plugs;
 
     public Plugboard(){
         this.plugs = FXCollections.observableArrayList();
@@ -38,5 +38,9 @@ public class Plugboard {
             }
         }
         return false;
+    }
+
+    public ObservableList<Plug> getPlugs() {
+        return plugs;
     }
 }
